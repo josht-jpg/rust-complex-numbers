@@ -1,21 +1,21 @@
 #[derive(Debug, PartialEq, Clone, Copy)]
-struct Complex(f64, f64);
+pub struct Complex(pub f64, pub f64);
 
-fn add(z1: &Complex, z2: &Complex) -> Complex {
+pub fn add(z1: &Complex, z2: &Complex) -> Complex {
     let Complex(a, b) = z1;
     let Complex(c, d) = z2;
 
     Complex(a + c, b + d)
 }
 
-fn mult(z1: &Complex, z2: &Complex) -> Complex {
+pub fn mult(z1: &Complex, z2: &Complex) -> Complex {
     let Complex(a, b) = z1;
     let Complex(c, d) = z2;
 
     Complex(a * c - b * d, a * d + b * c)
 }
 
-fn div(z1: &Complex, z2: &Complex) -> Complex {
+pub fn div(z1: &Complex, z2: &Complex) -> Complex {
     let Complex(a, b) = z1;
     let Complex(c, d) = z2;
 
@@ -25,7 +25,7 @@ fn div(z1: &Complex, z2: &Complex) -> Complex {
     )
 }
 
-fn magnitude(z: &Complex) -> f64 {
+pub fn magnitude(z: &Complex) -> f64 {
     let Complex(a, b) = z;
 
     (a.powi(2) + b.powi(2)).sqrt()
